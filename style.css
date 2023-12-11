@@ -1,13 +1,5 @@
 /* Reset some default styles */
-
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-dl,
-figure {
+body, h1, h2, h3, p, ul, dl, figure {
     margin: 0;
     padding: 0;
     page-break-inside: avoid;
@@ -20,9 +12,7 @@ body {
     color: #333;
 }
 
-
 /* Header Styles */
-
 header {
     background-color: #333;
     color: #fff;
@@ -30,15 +20,13 @@ header {
     text-align: center;
 }
 
-
 /* Navigation Styles */
-
 #mainNav {
     position: fixed;
     top: 0;
     left: 0;
     background-color: #333;
-    width: 200px;
+    width: 100%; /* Make the navigation full-width */
     height: 100vh;
     overflow-y: auto;
     padding-top: 20px;
@@ -48,7 +36,8 @@ header {
 
 #mainNav ul {
     list-style: none;
-    padding-left: 20px;
+    padding-left: 0;
+    text-align: center;
 }
 
 #mainNav a {
@@ -56,42 +45,34 @@ header {
     color: #fff;
     font-weight: bold;
     display: block;
-    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #fff;
 }
 
 #mainNav a:hover {
     color: #ff9900;
 }
 
-
 /* Adjust main content to make space for the navigation bar */
-
 main {
-    margin-left: 220px;
+    margin-left: 0;
+    padding: 20px; /* Add padding for better readability on small screens */
 }
 
-
 /* Ensure content is not hidden behind the navigation bar */
-
-header,
-section,
-footer {
+header, section, footer {
     position: relative;
     z-index: 2;
 }
 
-
 /* Main Styles */
-
 main {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
 }
 
-
 /* Section Styles */
-
 section {
     margin-bottom: 30px;
 }
@@ -105,17 +86,14 @@ hr {
     margin: 10px 0;
 }
 
-
 /* Table Styles for Print */
-
 table {
     border-collapse: collapse;
     width: 100%;
     margin-top: 20px;
 }
 
-th,
-td {
+th, td {
     border: 1px solid #ddd;
     text-align: left;
     padding: 8px;
@@ -129,9 +107,7 @@ tbody tr:hover {
     background-color: #f5f5f5;
 }
 
-
 /* List Styles */
-
 ul {
     list-style: none;
 }
@@ -140,9 +116,7 @@ li {
     margin-bottom: 10px;
 }
 
-
 /* Footer Styles */
-
 footer {
     background-color: #333;
     color: #fff;
@@ -150,16 +124,13 @@ footer {
     text-align: center;
 }
 
-
 /* Navigation Styles within Footer */
-
 footer nav ul {
     background-color: #333;
     padding: 10px;
 }
 
-footer nav a,
-footer h2 {
+footer nav a, footer h2 {
     color: #fff;
 }
 
@@ -167,45 +138,26 @@ footer nav a:hover {
     color: #ff9900;
 }
 
-
 /* Responsive Styles */
-
 @media (max-width: 600px) {
-    nav ul {
+    #mainNav {
+        height: auto; /* Allow the navigation to expand based on content */
+    }
+
+    #mainNav a {
+        border-bottom: none; /* Remove border between navigation items on small screens */
+    }
+
+    main {
+        padding: 10px; /* Adjust padding for small screens */
+    }
+
+    footer nav ul {
         text-align: center;
+    }
+
+    /* Adjust back-to-top link */
+    a.back {
         margin-top: 10px;
     }
-    nav ul li {
-        display: block;
-        margin-bottom: 10px;
-    }
-    main {
-        margin-left: 0;
-    }
-}
-
-
-/* Add this CSS to your existing style.css file */
-
-
-/* Add this CSS to your existing style.css file */
-
-a.back {
-    display: inline-block;
-    margin-top: 20px;
-    /* Adjust the spacing from the content */
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    /* Center the text horizontally */
-    line-height: 1;
-    /* Center the text vertically */
-}
-
-a.back:hover {
-    background-color: #555;
 }
