@@ -18,6 +18,8 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: #333;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 
@@ -34,40 +36,39 @@ header {
 /* Navigation Styles */
 
 #mainNav {
-    position: fixed;
-    top: 0;
-    left: 0;
     background-color: #333;
-    width: 200px;
-    height: 100vh;
-    overflow-y: auto;
-    padding-top: 20px;
-    box-sizing: border-box;
-    z-index: 1;
+    overflow: hidden;
 }
 
 #mainNav ul {
     list-style: none;
-    padding-left: 20px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#mainNav li {
+    display: inline-block;
 }
 
 #mainNav a {
     text-decoration: none;
     color: #fff;
-    font-weight: bold;
     display: block;
-    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #fff;
 }
 
 #mainNav a:hover {
-    color: #ff9900;
+    background-color: #555;
 }
 
 
 /* Adjust main content to make space for the navigation bar */
 
 main {
-    margin-left: 220px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 
@@ -84,9 +85,8 @@ footer {
 /* Main Styles */
 
 main {
-    max-width: 800px;
+    max-width: 100%;
     margin: 20px auto;
-    padding: 20px;
 }
 
 
@@ -164,36 +164,16 @@ footer h2 {
 }
 
 footer nav a:hover {
-    color: #ff9900;
+    background-color: #555;
 }
 
 
-/* Responsive Styles */
-
-@media (max-width: 600px) {
-    nav ul {
-        text-align: center;
-        margin-top: 10px;
-    }
-    nav ul li {
-        display: block;
-        margin-bottom: 10px;
-    }
-    main {
-        margin-left: 0;
-    }
-}
-
-
-/* Add this CSS to your existing style.css file */
-
-
-/* Add this CSS to your existing style.css file */
+/* Back to Top Styles */
 
 a.back {
     display: inline-block;
-    margin-top: 20px;
-    /* Adjust the spacing from the content */
+    margin-top: auto;
+    margin-bottom: 20px;
     padding: 10px;
     background-color: #333;
     color: #fff;
@@ -201,11 +181,35 @@ a.back {
     border-radius: 5px;
     transition: background-color 0.3s ease;
     text-align: center;
-    /* Center the text horizontally */
     line-height: 1;
-    /* Center the text vertically */
 }
 
-a.back:hover {
-    background-color: #555;
+@media only screen and (max-width: 600px) {
+    #menuToggle {
+        display: block;
+    }
+    #mainNav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        text-align: center;
+    }
+    #mainNav ul.show {
+        display: block;
+    }
+    #mainNav li {
+        display: block;
+        margin-bottom: 5px;
+    }
+    #mainNav a {
+        border: none;
+        padding: 15px 20px;
+    }
+    a.back {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
