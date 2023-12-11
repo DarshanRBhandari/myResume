@@ -26,7 +26,7 @@ header {
     top: 0;
     left: 0;
     background-color: #333;
-    width: 100%; /* Make the navigation full-width */
+    width: 100%;
     height: 100vh;
     overflow-y: auto;
     padding-top: 20px;
@@ -56,7 +56,7 @@ header {
 /* Adjust main content to make space for the navigation bar */
 main {
     margin-left: 0;
-    padding: 20px; /* Add padding for better readability on small screens */
+    padding: 20px;
 }
 
 /* Ensure content is not hidden behind the navigation bar */
@@ -141,15 +141,26 @@ footer nav a:hover {
 /* Responsive Styles */
 @media (max-width: 600px) {
     #mainNav {
-        height: auto; /* Allow the navigation to expand based on content */
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+
+    #mainNav ul {
+        text-align: center;
+        padding: 10px 0;
     }
 
     #mainNav a {
-        border-bottom: none; /* Remove border between navigation items on small screens */
+        display: block;
+        margin: 0;
+        padding: 10px;
+        border-bottom: 1px solid #fff;
     }
 
     main {
-        padding: 10px; /* Adjust padding for small screens */
+        margin-left: 0;
+        padding: 10px;
     }
 
     footer nav ul {
